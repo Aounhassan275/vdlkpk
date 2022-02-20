@@ -1,7 +1,7 @@
 @extends('front.layout.index')
 @section('meta')
     
-<title>HOME | Dlims Bhimber Govajk </title>
+<title>HOME | Verify Driving License KPK </title>
 @endsection
 
 @section('content')

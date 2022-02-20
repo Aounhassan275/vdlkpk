@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('front/images/logo.png')}}" alt="" /></a>
+				<a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('1.jpeg')}}" alt="" /></a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -57,14 +57,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!--end-header-->
 	<!--start-banner-->
-<div class="banner">
+	@php 
+	$setting = App\Models\Setting::find(1);
+	@endphp
+<div class="banner" style="background-image:url({{asset(@$setting->image)}})">
     <div class="container">
         <section class="slider">
             <div class="flexslider">
                 <ul class="slides">
                     <li>
                         <div class="banner-top">
-                            <h1>Welcome To vdlkpk</h1>
+                            <h1>Welcome To Verify Driving License KPK</h1>
                             <h2>Apply Us For Your License
                             </h2>
                             <div class="bnr-btn">
@@ -74,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li>
                         <div class="banner-top">
-                            <h1>Welcome To vdlkpk</h1>
+                            <h1>Welcome To Verify Driving License KPK</h1>
                             <h2>Verify Your License
                             </h2>
                             <div class="bnr-btn">
@@ -89,6 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--end-banner-->
 	<!--FlexSlider-->
+
 	<link rel="stylesheet" href="{{asset('front/css/flexslider.css')}}" type="text/css" media="screen" />
 	<script defer src="{{asset('front/js/jquery.flexslider.js')}}"></script>
 	<script type="text/javascript">

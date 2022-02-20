@@ -26,6 +26,11 @@
                                 <input type="radio" value="0" class="" name="download_button" @if(@$setting->download_button != 1) checked @endif>
                                 Off</label>
                         </div>
+                        <div class="form-group col-12">
+                            <label class="form-label">Image :</label>
+                            <br>
+                            <input type="file" class="form-control" name="image" >
+                        </div>
                    </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Update</button>

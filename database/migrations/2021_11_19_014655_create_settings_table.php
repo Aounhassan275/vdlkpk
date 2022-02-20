@@ -16,6 +16,7 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->boolean('download_button')->nullable()->default(0);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
