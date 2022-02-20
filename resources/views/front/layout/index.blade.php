@@ -115,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="footer-main">
 				<div class="col-md-6 footer-left">
-					<p>Driving License Issuance Management System (DLIMS) Dlims Bhimber Govajk automates the processes for driving license issuance, renewal and upgrades. These activities are carried out throughout the province of KPK</p>
+					<p>Verify Driving License KPK automates the processes for driving license issuance, renewal and upgrades. These activities are carried out throughout the province of KPK</p>
 				</div>
 				{{-- <div class="col-md-4 footer-left">
 					<p>+1 800 603 6035 <span>+1 900 300 1320</span> </p>
