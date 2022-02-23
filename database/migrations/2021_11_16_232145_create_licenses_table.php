@@ -33,6 +33,10 @@ class CreateLicensesTable extends Migration
             $table->string('passport')->nullable();
             $table->string('dob')->nullable();
             $table->string('mobile')->nullable();
+            $table->string('international_license_number')->nullable();
+            $table->string('international_issue_date')->nullable();
+            $table->string('international_valid_from')->nullable();
+            $table->string('international_valid_to')->nullable();
             $table->timestamps();
         });
     }

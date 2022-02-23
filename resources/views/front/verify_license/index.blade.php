@@ -56,7 +56,7 @@
             <hr class="space xs" />
         </div>
         <div class="additional-bottom">
-            <div class="col-md-4 additional-left">
+            <div class="col-md-6 additional-left">
                 <ul>
                     <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>License Number :</b>   {{$license->license_number}}</li>
                     <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Issue Date :</b>   {{$license->issue_date}}</li>
@@ -73,6 +73,30 @@
             </div>
             <div class="clearfix"></div>
         </div>
+        @if($license->international_license_number)
+        <div class="additional-top heading">
+            <h3>International License Information</h3>
+            <hr class="space xs" />
+        </div>
+        <div class="additional-bottom">
+            <div class="col-md-6 additional-left">
+                <ul>
+                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International License Number :</b>   {{$license->international_license_number}}</li>
+                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Issue Date :</b>   {{$license->international_issue_date}}</li>
+                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Valid From :</b>   {{$license->international_valid_from}}</li>
+                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Valid To :</b>   {{$license->international_valid_to}} </li>
+                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
+                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Status :</b> {{$license->status}}</li>
+                    @if(@$setting->download_button)
+                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                            <button type="button" id="pin_modals" class="btn btn-info">Download License</button>
+                    </li>
+                    @endif
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        @endif
     </div>
 </div>
 <!--end-additional-->
