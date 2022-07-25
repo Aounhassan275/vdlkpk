@@ -42,7 +42,7 @@
         </div>
         <div class="additional-bottom">
             <div class="col-md-4 additional-left">
-                <td><img src="{{asset($license->image)}}" width="400" height="400"></td>
+                <img src="{{asset($license->image)}}" width="400" height="400">
             </div>
             <div class="clearfix"></div>
         </div>
