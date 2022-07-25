@@ -128,7 +128,7 @@
                              <label class="form-label">International Valid To</label>
                              <input type="text"  class="form-control" name="international_valid_to" value="{{$license->international_valid_to}}" placeholder="International Valid To" >
                          </div>
-                     </div>
+                    </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>

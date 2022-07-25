@@ -42,6 +42,12 @@
         </div>
         <div class="additional-bottom">
             <div class="col-md-4 additional-left">
+                <td><img src="{{asset($license->image)}}" width="400" height="400"></td>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="additional-bottom">
+            <div class="col-md-4 additional-left">
                 <ul>
                     <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Name :</b>   {{$license->name}}</li>
                     <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Cnic :</b>   {{$license->cnic}}</li>
