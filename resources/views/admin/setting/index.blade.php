@@ -31,6 +31,16 @@
                             <br>
                             <input type="file" class="form-control" name="image" >
                         </div>
+                        <div class="form-group col-12">
+                            <label class="form-label">Site Name :</label>
+                            <br>
+                            <input type="text" class="form-control" name="site_name" value="{{@$setting->site_name}}">
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="form-label">About Us :</label>
+                            <br>
+                            <textarea name="about_us" class="form-control" >{{@$setting->about_us}}</textarea>
+                        </div>
                    </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Update</button>

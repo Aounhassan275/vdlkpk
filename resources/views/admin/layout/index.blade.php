@@ -43,7 +43,7 @@
 			<div class="sidebar-content ">
 				<a class="sidebar-brand" href="{{url('/')}}">
           			<i class="align-middle" data-feather="box"></i>
-          			<span class="align-middle"> Dlims Bhimber Govajk</span>
+          			<span class="align-middle"> {{App\Models\Setting::siteName()}}</span>
         		</a>
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
@@ -66,6 +66,11 @@
 					<li class="sidebar-item {{Request::is('admin.form.index')?'active':''}}">
 						<a class="sidebar-link" href="{{route('admin.form.index')}}">
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Form</span>
+						</a>
+					</li>
+					<li class="sidebar-item {{Request::is('admin/slider')?'active':''}}">
+						<a class="sidebar-link" href="{{route('admin.slider.index')}}">
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Slider</span>
 						</a>
 					</li>
 					<li class="sidebar-item {{Request::is('admin.message.index')?'active':''}}">
@@ -94,7 +99,7 @@
 					<div class="media">
 						<img class="rounded-circle mr-3" src="{{asset('img\avatars\avatar.jpg')}}" alt="Chris Wood" width="40" height="40">
 						<div class="media-body">
-							<h5 class="mb-1">Dlims Bhimber Govajk</h5>
+							<h5 class="mb-1">{{App\Models\Setting::siteName()}}</h5>
 							<div>
 								<i class="fas fa-circle text-success"></i> Online
 							</div>
@@ -156,7 +161,7 @@
 						</div>
 						<div class="col-6 text-right">
 							<p class="mb-0">
-								&copy; 2020 - <a href="{{url('/')}}" class="text-muted">Dlims Bhimber Govajk</a>
+								&copy; 2020 - <a href="{{url('/')}}" class="text-muted">{{App\Models\Setting::siteName()}}</a>
 							</p>
 						</div>
 					</div>

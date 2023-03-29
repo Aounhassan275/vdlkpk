@@ -8,7 +8,7 @@
 	<meta name="author" content="Bootlab">
 
 
-    <title>SIGN IN | Dlims Bhimber Govajk</title>   
+    <title>SIGN IN | {{App\Models\Setting::siteName()}}</title>   
 
 	<link rel="preconnect" href="{{asset('//fonts.gstatic.com/')}}'" crossorigin="">
 
@@ -48,7 +48,7 @@
                     <div class="d-table-cell align-middle">
     
                         <div class="text-center mt-4">
-                            <h1 class="h2">Welcome back, Dlims Bhimber Govajk</h1>
+                            <h1 class="h2">Welcome back, {{App\Models\Setting::siteName()}}</h1>
                             <p class="lead">
                                 Sign in to your account to continue
                             </p>

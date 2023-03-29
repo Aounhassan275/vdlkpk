@@ -28,6 +28,9 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.','namespace' => 'Admin'], funct
     Route::view('dashboard', 'admin.dashboard.index')->name('dashboard.index');
     /******************ADMIN ROUTES****************/
       Route::resource('admin', 'AdminController');    
+    /******************SLIDER ROUTES****************/
+      Route::resource('slider', 'SliderController');
+    /******************FORM ROUTES****************/
     /******************LICENSE ROUTES****************/
       Route::resource('license', 'LicenseController');
     /******************FORM ROUTES****************/

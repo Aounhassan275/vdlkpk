@@ -1,14 +1,15 @@
 @extends('front.layout.index')
 @section('meta')
     
-<title>Verify License | Verify Driving License KPK </title>
+<title>Verify License | {{App\Models\Setting::siteName()}} </title>
 @endsection
 
 @section('content')
-<div class="services">
+<div class="header-title white" data-parallax="scroll" data-position="top" data-natural-height="650"        data-natural-width="1920" data-image-src="{{asset('front/images/bg-10.png')}}">
     <div class="container">
-        <div class="services-top heading">
-            <h1>Verify License</h1>
+        <div class="title-base">
+            <hr class="anima" />
+            <h1>Verify License | <a href="{{url('/')}}">HOME</a></h1> 
         </div>
     </div>
 </div>
@@ -16,10 +17,12 @@
     <div class="container content">
         <div class="row">
             <div class="col-md-12">
+                <h4>Verify License Now</h4>
+                <hr class="space s" />
                 <form  method="GET">
                     <div class="row">
                         <div class="col-md-8">
-                            <input  name="cnic" placeholder="CNIC Number With Hashes" type="text" class="form-control form-value" required>
+                            <input  name="cnic" id="cnic" maxlength="15" minlength="15" placeholder="CNIC Number With Hashes" type="text" class="form-control form-value" required>
                             <hr class="space s" />
                         </div>
                         <div class="col-md-4">
@@ -32,80 +35,65 @@
         </div>
     </div>
 </div>
-<!--start-additional-->
 @if($license != null)
-<div class="additional">
-    <div class="container">
-        <div class="additional-top heading">
-            <h3>User Information</h3>
-            <hr class="space xs" />
-        </div>
-        <div class="additional-bottom">
-            <div class="col-md-4 additional-left">
-                <img src="{{asset($license->image)}}" width="400" height="400">
+<div class="section-empty">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img height="200" width="200" src="{{asset($license->image)}}" >
             </div>
-            <div class="clearfix"></div>
         </div>
-        <div class="additional-bottom">
-            <div class="col-md-4 additional-left">
-                <ul>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Name :</b>   {{$license->name}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Cnic :</b>   {{$license->cnic}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Father / Husband Name :</b>   {{$license->father_name}} </li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>City :</b> {{$license->city}}</li>
+        <div class="row vertical-row">
+            <div class="col-md-6">
+                <h4>User Information </h4>
+                <hr class="space xs" />
+                <ul class="list-texts">
+                    <li><b>Name :</b>   {{$license->name}}</li>
+                    <li><b>Cnic :</b>   {{$license->cnic}}</li>
+                    <li><b>Father / Husband Name :</b>   {{$license->father_name}} </li>
+                    <li><b>City :</b> {{$license->city}}</li>
                 </ul>
             </div>
-            <div class="clearfix"></div>
         </div>
-        <div class="additional-top heading">
-            <h3>License Information</h3>
-            <hr class="space xs" />
-        </div>
-        <div class="additional-bottom">
-            <div class="col-md-6 additional-left">
-                <ul>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>License Number :</b>   {{$license->license_number}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Issue Date :</b>   {{$license->issue_date}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Valid From :</b>   {{$license->valid_from}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Valid To :</b>   {{$license->valid_to}} </li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>Status :</b> {{$license->status}}</li>
+        <div class="row vertical-row">
+            <div class="col-md-6">
+                <h4>License Information </h4>
+                <hr class="space xs" />
+                <ul class="list-texts">
+                    <li><b>License Number :</b>   {{$license->license_number}}</li>
+                    <li><b>Issue Date :</b>   {{$license->issue_date}}</li>
+                    <li><b>Valid From :</b>   {{$license->valid_from}}</li>
+                    <li><b>Valid To :</b>   {{$license->valid_to}} </li>
+                    <li><b>Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
+                    <li><b>Status :</b> {{$license->status}}</li>
                     @if(@$setting->download_button)
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                            <button type="button" id="pin_modals" class="btn btn-info">Download License</button>
-                    </li>
+                    <li><button type="button" class="btn btn-sm" id="pin_modals"> Download License</button></li>
                     @endif
                 </ul>
             </div>
-            <div class="clearfix"></div>
         </div>
         @if($license->international_license_number)
-        <div class="additional-top heading">
-            <h3>International License Information</h3>
-            <hr class="space xs" />
-        </div>
-        <div class="additional-bottom">
-            <div class="col-md-6 additional-left">
-                <ul>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International License Number :</b>   {{$license->international_license_number}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Issue Date :</b>   {{$license->international_issue_date}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Valid From :</b>   {{$license->international_valid_from}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Valid To :</b>   {{$license->international_valid_to}} </li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><b>International Status :</b> {{$license->status}}</li>
+        <div class="row vertical-row">
+            <div class="col-md-6">
+                <h4>International License Information</h4>
+                <hr class="space xs" />
+                <ul class="list-texts">
+                    <li><b>International License Number :</b>   {{$license->international_license_number}}</li>
+                    <li><b>International Issue Date :</b>   {{$license->international_issue_date}}</li>
+                    <li><b>International Valid From :</b>   {{$license->international_valid_from}}</li>
+                    <li><b>International Valid To :</b>   {{$license->international_valid_to}} </li>
+                    <li><b>International Allowed Vehicle :</b> {{$license->allowed_vehicles}}</li>
+                    <li><b>International Status :</b> {{$license->status}}</li>
+                  
                     @if(@$setting->download_button)
-                    <li><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                            <button type="button" id="pin_modals" class="btn btn-info">Download License</button>
-                    </li>
+                    <li><button type="button" class="btn btn-sm" id="pin_modals"> Download License</button></li>
                     @endif
                 </ul>
             </div>
-            <div class="clearfix"></div>
         </div>
         @endif
     </div>
 </div>
-<!--end-additional-->
 <div id="pin_modal" class="modal fade">
     <div class="modal-dialog">
         <form method="get">
@@ -145,4 +133,26 @@
     });
     });
 </script>
+ 
+<script>
+        
+    $('#cnic').keydown(function(e){
+    
+      //allow  backspace, tab, ctrl+A, escape, carriage return
+      if (event.keyCode == 8 || event.keyCode == 9 
+                        || event.keyCode == 27 || event.keyCode == 13 
+                        || (event.keyCode == 65 && event.ctrlKey === true) )
+                            return;
+      if((event.keyCode < 48 || event.keyCode > 57))
+       event.preventDefault();
+    
+      var length = $(this).val().length; 
+                  
+      if(length == 5 || length == 13)
+       $(this).val($(this).val()+'-');
+       if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
+        // 0-9 only
+        }
+     });
+    </script>
 @endsection
