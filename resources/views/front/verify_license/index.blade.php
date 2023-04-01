@@ -22,7 +22,7 @@
                 <form  method="GET">
                     <div class="row">
                         <div class="col-md-8">
-                            <input  name="cnic" id="cnic" maxlength="15" minlength="15" placeholder="CNIC Number With Hashes" type="text" class="form-control form-value" required>
+                            <input  name="cnic" placeholder="CNIC Number With Hashes" type="text" class="form-control form-value" required>
                             <hr class="space s" />
                         </div>
                         <div class="col-md-4">
