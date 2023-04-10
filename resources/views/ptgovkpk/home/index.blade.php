@@ -23,7 +23,53 @@
         </div>
     </div>
     @endforeach
+    @if(App\Models\Slider::count() == 0)
     
+<div class="single-slider slider-height hero-overly slider-bg1 d-flex align-items-center">
+    <div class="container">
+    <div class="row">
+    <div class="col-xxl-6 col-xl-7 col-lg-6 col-md-9">
+        <div class="hero-caption">
+            <h1 data-animation="pulse" data-delay=".4s">
+            Verify Your<span>License</span>Now !</h1>
+            <a href="{{url('verify_license')}}" class="hero-btn" data-animation="bounceIn" data-delay=".8s">Verify <i class="ti-angle-right"></i> </a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="single-slider slider-height hero-overly slider-bg2 d-flex align-items-center">
+    <div class="container">
+    <div class="row">
+    <div class="col-xxl-6 col-xl-7 col-lg-6 col-md-9">
+        <div class="hero-caption">
+            <h1 data-animation="pulse" data-delay=".4s">
+            Verify Your<span>License</span>Now !</h1>
+            <a href="{{url('verify_license')}}" class="hero-btn" data-animation="bounceIn" data-delay=".8s">Verify <i class="ti-angle-right"></i> </a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="single-slider slider-height hero-overly slider-bg3 d-flex align-items-center">
+    <div class="container">
+    <div class="row">
+    <div class="col-xxl-6 col-xl-7 col-lg-6 col-md-9">
+        <div class="hero-caption">
+            <h1 data-animation="pulse" data-delay=".4s">
+            Verify Your<span>License</span>Now !</h1>
+            <a href="{{url('verify_license')}}" class="hero-btn" data-animation="bounceIn" data-delay=".8s">Verify <i class="ti-angle-right"></i> </a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    @endif
     
     <div class="slider-footer">
     <div class="footer-wrapper">
