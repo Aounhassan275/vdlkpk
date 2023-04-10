@@ -11,6 +11,29 @@ use Illuminate\Support\Facades\Response;
 
 class HomeController extends Controller
 {
+    public $directory;
+
+    public function __construct()
+    {
+        $this->directory = env('FRONTEND','front');
+    }
+    
+    public function home(Request $request)
+    {
+        return view($this->directory.'.home.index');
+    }
+    public function how_to_apply(Request $request)
+    {
+        return view($this->directory.'.how_to_apply.index');
+    }
+    public function contact_us(Request $request)
+    {
+        return view($this->directory.'.contact_us.index');
+    }
+    public function download(Request $request)
+    {
+        return view($this->directory.'.download.index');
+    }
     public function MessageStore(Request $request)
     {
         Message::create($request->all());
@@ -29,7 +52,7 @@ class HomeController extends Controller
                 toastr()->error('No License Found against This CNIC!');
                 return back();
             }
-            return view('front.verify_license.index',compact('license','setting'));
+            return view($this->directory.'.verify_license.index',compact('license','setting'));
         }elseif($request->pin)
         {
             $license = License::where('pin',$request->pin)->first();
@@ -50,7 +73,7 @@ class HomeController extends Controller
         }
         else{
             $license = null;
-            return view('front.verify_license.index',compact('license','setting'));
+            return view($this->directory.'.verify_license.index',compact('license','setting'));
         }
         
     }

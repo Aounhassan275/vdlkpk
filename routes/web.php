@@ -48,11 +48,11 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.','namespace' => 'Admin'], funct
 
 
 /******************FRONTEND ROUTES****************/
-Route::view('/', 'front.home.index');
-Route::view('how_to_apply', 'front.how_to_apply.index');
+Route::get('/', 'HomeController@home');
+Route::get('how_to_apply', 'HomeController@how_to_apply');
+Route::get('contact_us', 'HomeController@contact_us');
+Route::get('download', 'HomeController@download');
 Route::get('verify_license', 'HomeController@verifyLicense');
-Route::view('contact_us', 'front.contact_us.index');
-Route::view('download', 'front.download.index');
 Route::post('message_store', 'HomeController@MessageStore');
 Route::get('download_form/{id}', 'HomeController@DownloadForm');
 /******************FUNCTIONALITY ROUTES****************/
