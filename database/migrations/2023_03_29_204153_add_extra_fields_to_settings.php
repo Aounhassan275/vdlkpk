@@ -15,7 +15,7 @@ class AddExtraFieldsToSettings extends Migration
     {
         Schema::table('settings', function (Blueprint $table) {
             $table->string('site_name')->nullable();
-            $table->string('about_us')->nullable();
+            $table->longText('about_us')->nullable();
         });
     }
 
