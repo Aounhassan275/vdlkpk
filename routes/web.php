@@ -59,7 +59,7 @@ Route::get('download_form/{id}', 'HomeController@DownloadForm');
 Route::get('/cd', function() {
     Artisan::call('config:cache');
     Artisan::call('migrate');
-    // Artisan::call('db:seed', [ '--class' => DatabaseSeeder::class]);
+    Artisan::call('db:seed', [ '--class' => DatabaseSeeder::class]);
     Artisan::call('view:clear');
     return 'DONE';
 });
