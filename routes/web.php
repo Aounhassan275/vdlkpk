@@ -63,4 +63,9 @@ Route::get('/cd', function() {
     Artisan::call('view:clear');
     return 'DONE';
 });
+Route::get('/cache_clear', function() {
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return 'DONE';
+});
 
