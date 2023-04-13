@@ -9,7 +9,7 @@
     <div class="single-slider slider-bg4 hero-overly slider-height2 d-flex align-items-end">
     <div class="container">
     <div class="row">
-    <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
     
     <div class="hero-caption hero-caption2">
     <h2>Download</h2>

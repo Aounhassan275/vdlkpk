@@ -15,7 +15,7 @@ class HomeController extends Controller
 
     public function __construct()
     {
-        $this->directory = env('FRONTEND','front');
+        $this->directory = env('FRONTEND','ptgovkpk');
     }
     
     public function home(Request $request)
