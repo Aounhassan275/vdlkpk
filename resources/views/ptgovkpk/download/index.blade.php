@@ -6,13 +6,13 @@
 
 @section('content')
 <div class="slider-area">
-    <div class="single-slider slider-bg4 hero-overly slider-height2 d-flex align-items-end">
-    <div class="container">
+    <div class="single-slider slider-bg4 hero-overly slider-height2 d-flex align-items-end" @if(App\Models\Slider::first())  style="background-image:url({{asset(App\Models\Slider::first()->image)}})!important;" @endif>
+        <div class="container">
     <div class="row">
         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
     
     <div class="hero-caption hero-caption2">
-    <h2>Download</h2>
+    <h2 style="font-size:40px;">Download</h2>
      </div>
     </div>
     </div>
